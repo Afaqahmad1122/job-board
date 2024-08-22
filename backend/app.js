@@ -46,6 +46,12 @@ app.use("/api/v1/application", applicationRouter);
 // node cron for email
 newsLetterCron();
 
+app.get("/", (req, res, next) => {
+  return res.status(200).json({
+    success: true,
+    message: "Hello world",
+  });
+});
 // database connection
 connection();
 app.use(errorMiddleware);
